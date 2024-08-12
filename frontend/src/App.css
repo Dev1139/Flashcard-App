@@ -1,0 +1,199 @@
+/* Basic reset */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+/* Container for the whole application */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  padding: 20px;
+}
+
+/* Flashcard section */
+.flashcard-section {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Flashcard container to handle flipping */
+.flashcard {
+  width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  /* Perspective for 3D effect */
+  margin-bottom: 20px;
+}
+
+.flashcard-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flashcard-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Flashcard front and back */
+.flashcard-front,
+.flashcard-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.flashcard-front {
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+}
+
+.flashcard-back {
+  background-color: #4a90e2;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* Navigation buttons */
+.navigation {
+  margin-top: 10px;
+}
+
+.navigation button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+  background-color: #357ab9;
+}
+
+/* Edit and Delete buttons */
+.flashcard-actions {
+  margin-top: 10px;
+}
+
+.flashcard-actions button {
+  padding: 10px 20px;
+  font-size: 14px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.flashcard-actions button:first-child {
+  background-color: #f39c12;
+  color: white;
+}
+
+.flashcard-actions button:first-child:hover {
+  background-color: #e67e22;
+}
+
+.flashcard-actions button:last-child {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.flashcard-actions button:last-child:hover {
+  background-color: #c0392b;
+}
+
+/* Dashboard section */
+.dashboard-section {
+  width: 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.dashboard-section h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: calc(100% - 24px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.input-group button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #50e3c2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.input-group button:hover {
+  background-color: #45c7a9;
+}
+
+/* Ensuring everything is centered with proper margin */
+.flashcard-section{
+    max-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+.dashboard-section {
+  max-width: 400px;
+  max-height: 400px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.container {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
